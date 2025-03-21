@@ -7,7 +7,7 @@ const Stats = () => {
         <div className="col-6 p-5">
           <h1 className="mb-5">Trust with Confidence</h1>
           <h2 className="fs-4">Customer-first always</h2>
-          <p className="text-muted">That's why 1.3+ crore customers trust Zerodha with  <i class="fa-solid fa-indian-rupee-sign"></i> 3.5+ lakh crore worth of equity investments .</p>
+          <p className="text-muted">That's why 1.3+ crore customers trust Zerodha with  &#8377;3.5+ lakh crore worth of equity investments .</p>
           <h2 className="fs-4">No spam or gimmicks</h2>
           <p className="text-muted">No gimmicks , spam , "gamifiaction" , or annoying push notfications. high quality apps that you use at your pace , the way ypu like.</p>
           <h2 className="fs-4">The Zerodha universe</h2>
@@ -16,8 +16,8 @@ const Stats = () => {
           <p className="text-muted">With initiaitves like Nudge and Kill Switch , we don;t just facilitate transactions , but actively help you do better with your money</p>
           </div>
         <div className="col-6 p-5"> 
-          <img src="images/ecosystem.png" style={{width:"90%"}} alt="ecosystem_image"/>
-          <div className="text-center">
+          <img src="images/ecosystem.png" style={{width:"90%"}} alt="ecosystem_image" />
+          <div className="text-center mt-4">
             <a href='' className="mx-4" style={{textDecoration:"none"}}>Explore our products <i class="fa-solid fa-arrow-right"></i></a>
             <a href='' style={{textDecoration:"none"}}>Try kite <i class="fa-solid fa-arrow-right"></i></a>
           </div>
