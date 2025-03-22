@@ -1,9 +1,14 @@
 import React from 'react'
+import Hero from './Hero.js'
+import LeftSection from "./LeftSection"
+import RightSection from "./RightSection"
 
 const Universe = () => {
   return (
     <div>
-      <h1>universe</h1>
+      <Hero/>
+      <LeftSection/>
+      <RightSection/>
     </div>
   )
 }
