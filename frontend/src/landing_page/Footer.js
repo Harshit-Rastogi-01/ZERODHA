@@ -10,7 +10,7 @@ const Footer = () => {
           <br/> All rights reserved</p>
         </div>
 
-        <div className="col-3 fw-semibold fs-6 gap-6">
+        <div className="col-3 fw-semibold fs-6 gap-6" id="link">
           <p>Company</p>
             <a href="" > Products</a><br/>
             <a href="">About </a><br/>
@@ -22,7 +22,7 @@ const Footer = () => {
             <a href="">Zerodha cares(CSR)</a><br/>
         </div>
 
-        <div className="col-3 fw-semibold fs-6">
+        <div className="col-3 fw-semibold fs-6" id="link">
          <p>Support</p>
           <a href="">Contact</a><br/>
           <a href="">Support portal</a><br/>
@@ -30,7 +30,7 @@ const Footer = () => {
           <a href="">List of Charges</a><br/>
           <a href="">Download & resources</a><br/>
         </div>
-        <div className="col-3 fw-semibold fs-6">
+        <div className="col-3 fw-semibold fs-6" id="link">
           <p>Account</p>
             <a href="">Fund transfer</a><br/>
             <a href="">Open an account</a><br/>
