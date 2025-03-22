@@ -18,8 +18,8 @@ const Stats = () => {
         <div className="col-6 p-5"> 
           <img src="images/ecosystem.png" style={{width:"90%"}} alt="ecosystem_image" />
           <div className="text-center mt-4">
-            <a href='' className="mx-4" style={{textDecoration:"none"}}>Explore our products <i class="fa-solid fa-arrow-right"></i></a>
-            <a href='' style={{textDecoration:"none"}}>Try kite <i class="fa-solid fa-arrow-right"></i></a>
+            <a href='' className="mx-4" style={{textDecoration:"none"}}>Explore our products <i className="fa-solid fa-arrow-right"></i></a>
+            <a href='' style={{textDecoration:"none"}}>Try kite <i className="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
