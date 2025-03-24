@@ -14,3 +14,18 @@ code {
 .nav-link{
   margin-left: 40px;
 }
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  
+  color:white;
+  
+}
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  
+  margin:0px 120px;
+}
+#link a:hover{
+  color:rgb(41, 188, 237);
+}
