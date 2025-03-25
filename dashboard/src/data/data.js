@@ -1,6 +1,6 @@
 export const watchlist = [
   {
-    name: "INFY",
+    name: "INFOSYS",
     price: 1555.45,
     percent: "-1.60%",
     isDown: true,
