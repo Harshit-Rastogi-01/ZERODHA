@@ -29,3 +29,63 @@ code {
 #link a:hover{
   color:rgb(41, 188, 237);
 }
+/* Authpage.css */
+
+.auth_wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #007BFF, #4DA8DA);
+}
+
+.auth_page {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth_page h4 {
+  font-size: 1.5rem;
+  color: #007BFF;
+  margin-bottom: 1rem;
+}
+
+.auth_page span {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.auth_page button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.auth_page button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .auth_page {
+    padding: 1.5rem;
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+

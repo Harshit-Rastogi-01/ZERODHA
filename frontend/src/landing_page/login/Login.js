@@ -4,14 +4,13 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 // import "../Auth/Authpage.css";
 
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
-    username: "",
   });
-  const { email, password, username } = inputValue;
+  const { email, password } = inputValue;
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -21,20 +20,21 @@ const Signup = () => {
   };
 
   const handleError = (err) =>
-    toast.error("User already exsists !");
+    toast.error("Incorrect Credentials");
   const handleSuccess = (msg) =>
-    toast.success("Logged in succesfully");
+    toast.success("Logged in Successfully");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        "http://localhost:4000/login",
         {
           ...inputValue,
         },
         { withCredentials: true }
       );
+      console.log(data);
       const { success, message } = data;
       if (success) {
         handleSuccess(message);
@@ -51,7 +51,6 @@ const Signup = () => {
       ...inputValue,
       email: "",
       password: "",
-      username: "",
     });
   };
 
@@ -68,11 +67,8 @@ const Signup = () => {
 //     <button type="submit" className="btn btn-primary w-100">Submit</button>
 //   </form>
 // </div>
-
   return (
-    // <div className="container mt-5">
-    <div className="container p-5 mt-5">
-   
+    <div className="container mt-5">
       <form onSubmit={handleSubmit} className="p-4 border rounded shadow">
         <div className="mb-3">
           <label htmlFor="email" className="form-label">Email</label>
@@ -85,17 +81,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="email" className="form-label">Username</label>
-          <input className="form-control"
-            type="text"
-            name="username"
-            value={username}
-            placeholder="Enter your username"
-            onChange={handleOnChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password" className="form-label ">Password</label>
+          <label htmlFor="password" className="form-label" >Password</label>
           <input className="form-control"
             type="password"
             name="password"
@@ -104,15 +90,14 @@ const Signup = () => {
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary d-flex justify-content-center align-items-center mt-3 mb-3">Submit</button>
-        <span className="mb-5">
-          Already have an account? <Link to={"/login"}>Login</Link>
-        </span>
+        <button type="submit" className="btn btn-primary d-flex justify-content-center align-items-center mt-3 mb-3" >Submit</button>
+        
+          Already have an account? <Link to={"/signup"}>Signup</Link>
+        
       </form>
       <ToastContainer />
-      </div>
-    
+    </div>
   );
 };
 
-export default Signup;
+export default Login;
