@@ -1,19 +1,35 @@
-require('dotenv').config();
-const { HoldingsModel } = require('./models/HoldingsModel.js');
-const { PositionsModel } = require('./models/PositionsModel.js');
-const { OrdersModel } = require('./models/OrdersModel.js');
+require("dotenv").config();
+const { HoldingsModel } = require("./models/HoldingsModel.js");
+const { PositionsModel } = require("./models/PositionsModel.js");
+const { OrdersModel } = require("./models/OrdersModel.js");
+
+// const authRoute = require("./Routes/AuthRoute.js");
+
+
+// new added
+const { createSecretToken } = require("./util/SecretToken");
+const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
+
+
+
 
 const express = require("express");
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const port = process.env.PORT || 4000;
 const uri = process.env.MONGO_URL;
 
+const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3000",  // Allow only your frontend
+    credentials: true,  // Allow cookies
+  }));
 
-const app = express() ;
-app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // mongoose.connect(uri);
 
@@ -132,7 +148,7 @@ app.use(bodyParser.json());
 
 //   tempHoldings.forEach((item)=>{
 //     let newHolding = new HoldingsModel({
-//       name:item.name, 
+//       name:item.name,
 //       qty: item.qty,
 //       avg: item.avg,
 //       price: item.price,
@@ -143,7 +159,6 @@ app.use(bodyParser.json());
 //   });
 //   res.send("Done Holdings data inserted successfully !");
 // })
-
 
 // app.get('/addPositons' , async(req,res)=>{
 //   let tempPositions =  [
@@ -185,35 +200,112 @@ app.use(bodyParser.json());
 //   })
 // })
 
-app.get('/allHoldings', async(req,res) =>{
-  let allHoldings = await HoldingsModel.find({}); //holdingsmodel me se saara data fetch krna hai 
-  res.json(allHoldings); // we have to send the data in json format 
-
+app.get("/allHoldings", async (req, res) => {
+  let allHoldings = await HoldingsModel.find({}); //holdingsmodel me se saara data fetch krna hai
+  res.json(allHoldings); // we have to send the data in json format
 });
 
-app.get('/allPositions' , async(req,res) =>{
+app.get("/allPositions", async (req, res) => {
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
-})
+});
 
-app.post('/newOrder' , async(req,res)=>{
 
+
+
+
+
+app.use(cookieParser());
+// const router = require("express").Router();
+
+// router.post("/signup", Signup);
+
+
+
+
+
+
+const { UsersModel } = require("./models/UsersModel.js");
+
+app.post("/signup", async (req, res, next) => {
+  try {
+    const { email, password, username, createdAt } = req.body;
+    const existingUser = await UsersModel.findOne({ email });
+    
+      if (existingUser) {
+        return res.json({ message: "User already exists" });
+      }
+      const user = await UsersModel.create({ email, password, username, createdAt });
+      const token = createSecretToken(user._id);
+      res.cookie("token", token, {
+        withCredentials: true,
+        httpOnly: false,
+      });
+      res
+        .status(201)
+        .json({ message: "User signed in successfully", success: true, user });
+      next();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+
+
+
+const { userVerification } = require("./Middlewares/AuthMiddleware.js");
+//user verification using tokens
+app.post('/verify',userVerification);
+
+
+// new login setup 
+
+app.post("/login",  async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    if(!email || !password ){
+      return res.json({message:'All fields are required'})
+    }
+    const user = await UsersModel.findOne({ email });
+    if(!user){
+      return res.json({message:'Incorrect password or email' }) 
+    }
+    const auth = await bcrypt.compare(password,user.password)
+    if (!auth) {
+      return res.json({message:'Incorrect password or email' }) 
+    }
+     const token = createSecretToken(user._id);
+     res.cookie("token", token, {
+       withCredentials: true,
+       httpOnly: false,
+     });
+     res.status(201).json({ message: "User logged in successfully", success: true });
+     next()
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+
+
+
+
+
+app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
-    price:req.body.price,
+    price: req.body.price,
     percent: req.body.percent,
-    mode: req.body.mode ,
+    mode: req.body.mode,
   });
-
 
   newOrder.save();
   res.send("Order Saved");
+});
 
-})
-
-app.listen(port,()=>{
+app.listen(port, () => {
   console.log(`App started at port number ${port}!`);
-  if(mongoose.connect(uri)){
+  if (mongoose.connect(uri)) {
     console.log("DB connected successfully !");
   }
 });
