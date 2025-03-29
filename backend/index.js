@@ -25,7 +25,7 @@ const uri = process.env.MONGO_URL;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",  // Allow only your frontend
+    origin: ["http://localhost:3000","http://localhost:3001"],  // Allow only your frontend ,dashboard both
     credentials: true,  // Allow cookies
   }));
 
@@ -219,8 +219,6 @@ app.use(cookieParser());
 // const router = require("express").Router();
 
 // router.post("/signup", Signup);
-
-
 
 
 
