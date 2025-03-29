@@ -31,7 +31,11 @@ export const options = {
     },
   },
 };
+//we have removed the dummy data 
+//we have copied the code from https://react-chartjs-2.js.org || isme vertical grapgh wala code , it was in typescript but we changed in by removing const , to react code
 
 export function VerticalGraph({ data }) {
   return <Bar options={options} data={data} />;
 }
+
+
