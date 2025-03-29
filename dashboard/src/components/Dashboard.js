@@ -1,18 +1,32 @@
-import React from "react";
+import React ,{useEffect}from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Apps from "./Apps";
 import Funds from "./Funds";
 import Holdings from "./Holdings";
-
 import Orders from "./Orders";
 import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
 
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+
+  //added for redirection from login page to dashboard page .
+
+  const [cookies] = useCookies(["token"]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!cookies.token) {
+      window.location.href = "http://localhost:3000/login"; // Redirect to login
+    }
+  }, [cookies]);
+
+
   return (
+    
     <div className="dashboard-container">
       <GeneralContextProvider>
         <WatchList />
