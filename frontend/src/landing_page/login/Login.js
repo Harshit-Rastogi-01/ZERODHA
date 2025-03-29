@@ -39,7 +39,11 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+
+          // navigate("/");
+          
+
+          window.location.href = "http://localhost:3001";
         }, 1000);
       } else {
         handleError(message);
