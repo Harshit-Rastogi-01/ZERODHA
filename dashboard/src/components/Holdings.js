@@ -8,10 +8,12 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]); //initially array is empty
 
   useEffect(() => {
-    axios.get("http://localhost:4000/allHoldings").then((res) => {
+    // axios.get("http://localhost:4000/allHoldings").then((res) => {
+    axios.get("https://zerodha-backend-yn9o.onrender.com/allHoldings").then((res) => {
       console.log(res.data);
       setAllHoldings(res.data);
     });
+    // https://zerodha-backend-yn9o.onrender.com
   }, []);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
