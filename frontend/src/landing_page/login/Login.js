@@ -28,9 +28,9 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        // "http://localhost:4000/login",
+        "http://localhost:4000/login",
         // https://zerodha-backend-yn9o.onrender.com
-        "https://zerodha-backend-yn9o.onrender.com/login",
+        // "https://zerodha-backend-yn9o.onrender.com/login",  //backend live url
         {
           ...inputValue,
         },

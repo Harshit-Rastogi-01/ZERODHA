@@ -16,8 +16,8 @@ const AuthPage = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        // "http://localhost:4000/verify", //sending req to backend
-        "https://zerodha-backend-yn9o.onrender.com/verify",
+        "http://localhost:4000/verify", //sending req to backend
+        // "https://zerodha-backend-yn9o.onrender.com/verify", //backend live url
         {},
         { withCredentials: true }
       );

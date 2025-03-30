@@ -9,8 +9,8 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]); //initially array is empty
 
   useEffect(() => {
-    // axios.get("http://localhost:4000/allPositions").then((res) => {
-    axios.get("https://zerodha-backend-yn9o.onrender.com/allPositions").then((res) => {
+    axios.get("http://localhost:4000/allPositions").then((res) => {
+    // axios.get("https://zerodha-backend-yn9o.onrender.com/allPositions").then((res) => {
       console.log(res.data);
       setAllPositions(res.data);
     });
