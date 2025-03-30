@@ -20,7 +20,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!cookies.token) {
-      window.location.href = "http://localhost:3000/login"; // Redirect to login
+      // window.location.href = "http://localhost:3000/login"; // Redirect to login
+      window.location.href = "https://zerodha-frontend-q0yr.onrender.com/login";
+      
     }
   }, [cookies]);
 
