@@ -29,7 +29,10 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        // "http://localhost:4000/signup",
+        // https://zerodha-backend-yn9o.onrender.com
+        "https://zerodha-backend-yn9o.onrender.com/signup",
+
         {
           ...inputValue,
         },
