@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 // import "../Auth/Authpage.css";
+import Navbar from "../Navbar"
+import Footer from "../Footer"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,10 +44,13 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
 
-          // navigate("/");
-          
+        
+          navigate("/dashboard");
 
-          window.location.href = "http://localhost:3001";
+          
+          // window.location.href = "http://localhost:3001";
+
+          
         }, 1000);
       } else {
         handleError(message);
@@ -74,6 +79,8 @@ const Login = () => {
 //   </form>
 // </div>
   return (
+    <><Navbar/>
+    
     <div className="container mt-5">
       <form onSubmit={handleSubmit} className="p-4 border rounded shadow">
         <div className="mb-3">
@@ -103,6 +110,8 @@ const Login = () => {
       </form>
       <ToastContainer />
     </div>
+    <Footer />
+    </>
   );
 };
 

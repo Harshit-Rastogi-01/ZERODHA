@@ -3,10 +3,12 @@ import Hero from './Hero.js'
 import LeftSection from "./LeftSection"
 import RightSection from "./RightSection"
 import Universe from './Universe'
-
+import Navbar from "../Navbar"
+import Footer from "../Footer"
 const ProductPage = () => {
   return (
     <div>
+      <Navbar/>
       <Hero/>
       <LeftSection 
       imageURL="images/kite.png"
@@ -51,6 +53,8 @@ const ProductPage = () => {
       <a href="#" style={{textDecoration:"none"}}> Zerodha.tech</a>  blog.
       </div>
       <Universe/>
+      
+      <Footer/>
     </div>
   )
 }

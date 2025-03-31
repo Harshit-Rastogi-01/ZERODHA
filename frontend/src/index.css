@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width:100%;
 }
 
 code {
@@ -23,7 +24,9 @@ code {
 #supportWrapper{
   display: flex;
   justify-content: space-between;
-  
+  width: 100%;
+  /* max-width: 1200px; Adjust as needed */
+  /* margin: 0 auto;  Centers the content */
   margin:0px 120px;
 }
 #link a:hover{

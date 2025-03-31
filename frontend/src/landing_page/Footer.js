@@ -8,6 +8,7 @@ const Footer = () => {
           <img src="images/logo.svg" className="mb-3" style={{width:"50%"}} alt="footer_img"/>
           <p className="mb-3 lh-4 text-muted"> © 2010 - 2025, Zerodha Broking Ltd.
           <br/> All rights reserved</p>
+          <br/><br/><br/><br/><br/>
         </div>
 
         <div className="col-3 fw-semibold fs-6 gap-6" id="link">
@@ -22,19 +23,21 @@ const Footer = () => {
             <a href="">Zerodha cares(CSR)</a><br/>
         </div>
 
-        <div className="col-3 fw-semibold fs-6" id="link">
+        <div className="col-3 fw-semibold fs-6 " id="link">
          <p>Support</p>
           <a href="">Contact</a><br/>
           <a href="">Support portal</a><br/>
           <a href="">Z-Connect blog</a><br/>
           <a href="">List of Charges</a><br/>
           <a href="">Download & resources</a><br/>
+          <br/><br/><br/>
         </div>
         <div className="col-3 fw-semibold fs-6" id="link">
           <p>Account</p>
             <a href="">Fund transfer</a><br/>
             <a href="">Open an account</a><br/>
             <a href="">60 day challenge</a><br/>
+            <br/><br/><br/><br/><br/>
         </div>
 
       </div>

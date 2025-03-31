@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 // import "../Auth/Authpage.css";
+import Navbar from "../Navbar"
+import Footer from '../Footer'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -21,9 +23,9 @@ const Signup = () => {
   };
 
   const handleError = (err) =>
-    toast.error("User already exsists !");
+    toast.error("User already exists !");
   const handleSuccess = (msg) =>
-    toast.success("Logged in succesfully");
+    toast.success("Registered successfully");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +44,13 @@ const Signup = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+
+
+          // navigate("/");
+
+          navigate("/dashboard");
+
+
         }, 1000);
       } else {
         handleError(message);
@@ -58,22 +66,13 @@ const Signup = () => {
     });
   };
 
-//   <div className="container mt-5">
-//   <form className="p-4 border rounded shadow">
-//     <div className="mb-3">
-//       <label htmlFor="email" className="form-label">Email</label>
-//       <input type="email" className="form-control" id="email" placeholder="Enter your email" />
-//     </div>
-//     <div className="mb-3">
-//       <label htmlFor="password" className="form-label">Password</label>
-//       <input type="password" className="form-control" id="password" placeholder="Enter your password" />
-//     </div>
-//     <button type="submit" className="btn btn-primary w-100">Submit</button>
-//   </form>
-// </div>
+
 
   return (
-    // <div className="container mt-5">
+  <>
+  <Navbar/>
+  
+   
     <div className="container p-5 mt-5">
    
       <form onSubmit={handleSubmit} className="p-4 border rounded shadow">
@@ -114,7 +113,8 @@ const Signup = () => {
       </form>
       <ToastContainer />
       </div>
-    
+      <Footer/>
+      </>
   );
 };
 

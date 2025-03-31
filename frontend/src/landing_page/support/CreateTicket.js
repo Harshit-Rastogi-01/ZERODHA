@@ -12,14 +12,14 @@ const CreateTicket = () => {
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Minor</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Non Resident Indian (NRI)</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Company, Partnership, HUF and LLP</a><br/>
-            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Glossary</a><br/>
+            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Glossary</a><br/><br/>
           </ul>
         </div>
         <div className="col-4 mt-2">
           <h4 className="fs-5"><i class="fa-solid fa-user"></i>  Your Zerodha Account</h4>
           <ul className="mt-4">
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }} >Your Profile</a><br/>
-            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>ccount modification</a><br/>
+            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Account modification</a><br/>
            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}> Client Master Report (CMR) and Depository Participant (DP)</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Nomination</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Transfer and conversion of securities</a><br/>
@@ -33,7 +33,7 @@ const CreateTicket = () => {
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Minor</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Non Resident Indian (NRI)</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Company, Partnership, HUF and LLP</a><br/>
-            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Glossary</a><br/>
+            <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Glossary</a><br/><br/><br/>
           </ul>
         </div>
 
@@ -43,7 +43,7 @@ const CreateTicket = () => {
             <a href="#"  className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }} >Add money</a><br/>
             <a href="#" className="mt-2"style={{textDecoration:"none",  lineHeight:"2.5"}}>Withdraw money</a><br/>
             <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}> Add bank accounts</a><br/>
-            <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>eMandates</a><br/>
+            <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>eMandates</a><br/><br/><br/><br/>
           </ul>
         </div>
         <div className="col-4 mt-5">
@@ -64,7 +64,7 @@ const CreateTicket = () => {
             <a href="#" className="mt-2"style={{textDecoration:"none",  lineHeight:"2.5"}}>Coin app</a><br/>
             <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}> Coin web</a><br/>
             <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>Transactions and reports</a><br/>
-            <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>National Pension Scheme (NPS) </a><br/>
+            <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>National Pension Scheme (NPS) </a><br/><br/><br/>
           </ul>
         </div>
       </div>
