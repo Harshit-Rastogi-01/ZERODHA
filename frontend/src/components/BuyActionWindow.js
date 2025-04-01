@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import axios from "axios"; 
+import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
-import "./component.css"
+import "./component.css";
 import "./BuyActionWindow.css";
 
 const BuyActionWindow = ({ uid }) => {
@@ -12,7 +12,8 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:4000/newOrder", {
+    axios.post("https://zerodha-backend-a9qr.onrender.com/newOrder", {
+      // https://zerodha-backend-a9qr.onrender.com
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
@@ -22,15 +23,15 @@ const BuyActionWindow = ({ uid }) => {
     GeneralContext.closeBuyWindow(); // once the order gets placed the order window closes
   };
 
-  const handleSellClick =()=>{
-    axios.post("http://localhost:4000/newOrder", {
+  const handleSellClick = () => {
+    axios.post("https://zerodha-backend-a9qr.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "SELL", //sell button logic
     });
     GeneralContext.closeBuyWindow();
-  }
+  };
 
   const handleCancelClick = () => {
     GeneralContext.closeBuyWindow();
@@ -67,7 +68,10 @@ const BuyActionWindow = ({ uid }) => {
       <div className="buttons">
         <span>Margin required ₹140.65</span>
         <div>
-          <Link className="btn btn-blue" onClick={handleBuyClick}> Buy </Link>
+          <Link className="btn btn-blue" onClick={handleBuyClick}>
+            {" "}
+            Buy{" "}
+          </Link>
           <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
             Cancel
           </Link>

@@ -9,13 +9,15 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]); //initially array is empty
 
   useEffect(() => {
-    axios.get("http://localhost:4000/allPositions").then((res) => {
-    // axios.get("https://zerodha-backend-yn9o.onrender.com/allPositions").then((res) => {
+    // axios.get("http://localhost:4000/allPositions").then((res) => {
+    axios.get("https://zerodha-backend-a9qr.onrender.com/allPositions").then((res) => { 
+      // https://zerodha-backend-a9qr.onrender.com
+    
       console.log(res.data);
       setAllPositions(res.data);
     });
   }, []);
-  // https://zerodha-backend-yn9o.onrender.com
+  
   return (
     <>
       <h3 className="title">Positions ({allPositions.length})</h3>

@@ -26,7 +26,7 @@ import AuthPage from './landing_page/AuthPage.js'
 // import Summary from "./components/Summary";
 // import WatchList from "./components/WatchList";
 // import { GeneralContextProvider } from "./components/GeneralContext";
-import Dashboard from "./components/Dashboard"
+// import Dashboard from "./components/Dashboard"
 import Home from "./components/Home.js";
 import { CookiesProvider } from "react-cookie"; 
 
