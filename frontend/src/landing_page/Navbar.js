@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container p-2">
         <Link className="navbar-brand" to="/" >
-          <img src="images/logo.svg" style={{ width: "30%" }} alt="logo" />
+          <img src="images/logo.png" style={{ width: "30%" }} alt="logo" />
         </Link>
         <button
           className="navbar-toggler"

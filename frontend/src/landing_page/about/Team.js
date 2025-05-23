@@ -11,13 +11,13 @@ const Team = () => {
         <div className="col-1"></div>
 
         <div className="col-5 text-muted mt-0 mb-5 text-center">
-          <img src="images/nithinKamath.jpg" alt="owner_image"  style={{borderRadius:"100%" ,width:"55%"}}/> 
-          <h4 className="mt-4">Nitin Kamath</h4>
-          <h6>Founder , CEO</h6>
+          <img src="images/HARSHIT_Image1.png" alt="owner_image"  style={{borderRadius:"100%" ,width:"55%"}}/> 
+          <h4 className="mt-4">Harshit Rastogi</h4>
+          <h6>Founder , CEO , 2025-26 </h6>
         </div>
 
         <div className="col-5 text-muted mt-3 mb-5 fs-6">
-          <p>Nithin bootstrapped and founded Zerodha in 2010 to overcome the hurdles he faced during his decade long stint as a trader. Today, Zerodha has changed the landscape of the Indian broking industry.</p>
+          <p>Harshit bootstrapped and founded Nivesh Drishti in 2025 to overcome the hurdles he faced during his decade long stint as a trader. Today, Nivesh Drishti has changed the landscape of the Indian broking industry.</p>
           <br/>
           <p> He is a member of the SEBI Secondary Market Advisory Committee (SMAC) and the Market Data Advisory Committee (MDAC).</p>
          <br/>

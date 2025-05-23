@@ -16,7 +16,7 @@ const CreateTicket = () => {
           </ul>
         </div>
         <div className="col-4 mt-2">
-          <h4 className="fs-5"><i class="fa-solid fa-user"></i>  Your Zerodha Account</h4>
+          <h4 className="fs-5"><i class="fa-solid fa-user"></i>  Your Nivesh Drishti Account</h4>
           <ul className="mt-4">
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }} >Your Profile</a><br/>
             <a href="#" style={{textDecoration:"none", lineHeight:"2.5" }}>Account modification</a><br/>
@@ -67,6 +67,7 @@ const CreateTicket = () => {
             <a href="#" className="mt-2"style={{textDecoration:"none", lineHeight:"2.5" }}>National Pension Scheme (NPS) </a><br/><br/><br/>
           </ul>
         </div>
+        
       </div>
     </div>
   )
