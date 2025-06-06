@@ -4,7 +4,7 @@ const Universe = () => {
   return (
     <div className="container  mt-5 mx -3 mb-5">
       <div className="row text-center ">
-        <h1 className="mt-5">The Zerodha Universe</h1>
+        <h1 className="mt-5">The Nivesh Universe</h1>
         <p>Extend your trading and investment experience even further with our partner platforms </p>
 
         <div className="col-4 mt-5  p-3 ">
